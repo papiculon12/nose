@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casos de Donación</title>
+    <style type="text/css">
+        
+         .navbar-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-logo img {
+      height: 30px; /* Ajusta el tamaño del logo según necesites */
+      margin-right: 10px;
+    }
+
+            section{
+    display: flex;
+    width: 1340px;
+    height: 500px;
+
+}
+section img{
+width: 0px;
+flex-grow: 10;
+object-fit: cover;
+opacity: .8;
+transition: .5s ease;
+}
+
+section img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+    
+}
+
+    @keyframes diamond-in-hesitate {
+  0% {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  50% {
+    clip-path: polygon(45% 50%, 50% 25%, 55% 50%, 50% 75%);
+  }
+  100% {
+    clip-path: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);
+  }
+}
+
+[transition-style="in:diamond:hesitate"] {
+  animation: 1.5s cubic-bezier(.25, 1, .30, 1) diamond-in-hesitate both;
+
+
+}
+
+/* Estilos para la sección de imágenes y paneles */
+        .image-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        
+
+        }
+
+        .image-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 8px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            transform: translateY(100%);
+        }
+
+        .image-container:hover .info {
+            transform: translateY(0);
+        }
+
+.navbar {
+    background-color: #425413;
+    padding: 10px;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-right: 20px;
+    position: relative;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+}
+
+.nav-item a:hover {
+    background-color: #4e6311;
+    border-radius: 4px;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 25px 0 0 25px;
+    width: 200px;
+}
+
+.search-button {
+    border: none;
+    background-color: #74940a;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    margin: 10px;
+    width: 200px;
+    height: 150px;
+}
+
+
+.image-container img {
+    margin: 10px;
+    width: 200px;
+    height: 150px;
+}
+
+.comentarios {
+    background-color: #a34532;
+   padding: 10px;
+     display: inline-block; /*  el borde se ajuste al tamaño del contenido */
+     margin: 0 auto;
+  }
+
+
+ .container {
+        display: flex;
+        justify-content: flex-end;
+              gap: 130px; /* Espacio entre los elementos */
+
+    }
+
+    .informa {
+        background-image: linear-gradient(to left, #009EC9, #FFFFFF);
+        padding: 10px;
+
+
+    }
+
+footer {
+  background-color: #3d1912;
+  padding: 20px;
+  color: #fcf5f4;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer .pie {
+  flex-basis: 33.33%;
+  margin: 20px;
+}
+
+
+
+footer ul {
+  list-style: none;
+
+}
+
+footer li {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #e59484;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #f0bcb1;
+}
+
+footer .copyright {
+  font-size: 14px;
+  color: #d3614a;
+  text-align: center;
+}
+
+.subtitulos {
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+.subtitulos2 {
+    margin-left: 50px;
+    font-size: 25px;
+}
+
+.subtitulos3 {
+    margin-left: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.imagen-caso1 {
+    margin-right: 250px;
+    margin-top: -35px;
+    float: right;
+    border: 20px solid transparent;
+}
+
+.imagen-caso2 {
+    margin-right: 250px;
+    margin-top: 10px;
+    float: right;
+    border: 20px solid transparent;
+}
+
+.imagen-caso3 {
+    margin-right: 200px;
+    margin-top: 60px;
+    float: right;
+    border: 20px solid transparent;
+}
+
+.casos-parrafos {
+    margin-left: 30px;
+    font-size: 19px;
+}
+
+.casos-parrafos2 {
+    margin-left: 80px;
+    font-size: 19px;
+    text-align: center;
+}
+
+.introduccion {
+    margin-left: 170px;
+    font-size: 21px;
+}
+
+.casos-parrafos2-p {
+    margin-left: 70px;
+    margin-top: -20px;
+    text-align: center;
+}
+
+    </style>
+
+
+</head>
+
+<body style="margin: 0;">
+    <nav class="navbar">
+        <ul class="nav-list">
+            <div class="navbar-logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/5783/5783338.png" alt="Logo"> 
+            </div>
+            <li class="nav-item"><a href="pagprim.html">Inicio</a></li>
+            <li class="nav-item"><a href="pag.html">Acerca de</a></li>
+            
+            <li class="nav-item dropdown">
+                <a href="#" class="dropbtn">Más</a>
+                <div class="dropdown-content">
+                    <a href="acerca.html">acerca de</a>
+                    <a href="casos.html">casos</a>
+                    <a href="organos.html">organos</a>
+                </div>
+            </li>
+            <li class="nav-item search-item">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="search-button">Buscar</button>
+            </li>
+        </ul>
+    </nav>
+
+    <div style="background-color: #ba4848; color: white; font-family: cursive;">
+        <marquee><h1>--------->Casos de Donación de Órganos<---------</h1></marquee>
+    </div>
+    <br>
+    <div class="introduccion">
+    <p>Los trasplantes de órganos, córneas y tejidos transforman vidas. Salvan la vida de quienes están al borde de la muerte,<br> restauran la vista, convierten la pérdida en esperanza y forman profundos vínculos entre completos desconocidos.<br><br>
+
+Las historias presentadas en esta página presentarán a algunas de las personas que conforman la diversa comunidad <br>de trasplantes de EE. UU.<br><br>
+
+Siga leyendo para conocer más sobre estos beneficiarios de trasplantes especiales, las familias de los donantes y los <br>donantes en vida. Estas personas son prueba viviente de esa verdad increíble: los trasplantes de órganos, córneas <br>y tejidos cambian vidas.</p>
+    </div><br><br>
+
+    <div class="informa">
+        <div transition-style="in:diamond:hesitate" style="font-family: cursive; text-align: center;">
+            <h1>Casos de Donación de Órganos</h1>
+        </div>
+
+        <div class="subtitulos3">
+        <h2>Historias de Vida</h2>
+    </div>
+
+        <div class="casos-parrafos2">
+        <p style="color: #FF0000;"><strong>Aquí compartimos algunas historias inspiradoras de personas que han recibido</strong></p> 
+        <div class="casos-parrafos2-p">
+        <p style="color: #FF0000;"><strong>trasplantes de órganos y cómo esto ha cambiado sus vidas.</strong></p>
+        </div>
+        </div>
+
+        <div class="subtitulos2">
+        <h3>El caso de Jesica Santillán:</h3>
+    </div>
+
+        <div class="imagen-caso1">
+            <img src="ima\jesica.png" alt="El caso de Jesica Santillán" height="450px" width="500px">
+        </div>
+        <div class="casos-parrafos">
+        <p>La adolescente mexicana Jesica Santillán, que fue sometida a dos trasplantes de corazón y pulmones en Estados Unidos.<br><br>
+
+        Jesica sufría desde hace años de una cardiomiopatía, una enfermedad mortal que había debilitado su corazón y sus pulmones. 
+
+        Su primer trasplante en Duke se produjo el 7 de febrero, pero salió mal porque se utilizaron unos órganos incompatibles con el grupo sanguíneo de Jesica, lo que provocó un rechazo en el cuerpo de la joven. 
+
+        <br><br>Días más tarde, el 19 de febrero, la niña se sometió a un segundo trasplante, éste con órganos compatibles. Las esperanzas iniciales de una posible recuperación quedaron truncadas al percibirse un daño cerebral irreversible horas después, lo que finalmente condujo a su muerte.  </p>
+        </div>
+        <br><br><br><br><br><br><br><br>
+
+        <div class="subtitulos2">
+
+            <div class="imagen-caso2">
+            <img src="ima\caso Brittany.jpg" alt="El caso de Brittany" height="450px" width="500px">
+        </div>
+
+        <h3>El caso de Brittany</h3>
+    </div>
+
+        <div class="casos-parrafos">
+        <p>Hoy, Brittany es una chica joven y segura con objetivos y promesas, gracias al regalo de la vida. Pero su corta vida ha estado repleta de desafíos.
+
+        A los 9 años, Brittany fue al hospital para que le realizaran un procedimiento de cauterización. Sin embargo, terminó internada durante seis meses, esperando la donación de un corazón. Mientras estaba ahí, apareció un donante de corazón. Una niña de 13 años había fallecido luego de ser atropellada por un automóvil.
+
+Brittany no conoce a la familia de su donante. Si tuviera la oportunidad de hablar con su donante, le diría, "Gracias. Sé que no solo estoy alcanzando mis objetivos, sino también los suyos".
+
+Brittany comenta que su familia está muy orgullosa de ella. "Cuando tienen que presentarme a mí o contar mi historia, les encanta", dice Brittany.
+</p>
+        </div>
+        <br><br><br><br><br><br><br><br>
+
+        <div class="imagen-caso3">
+            <img src="ima\caso Dra. Daw.jpg" alt="El caso de la Dra. Daw" height="450px" width="500px">
+        </div>
+
+        <div class="subtitulos2">
+        <h3>El caso de la Dra. Daw</h3>
+    </div>
+
+        <div class="casos-parrafos">
+        <p>La Dra. Daw era una mujer de mucho talento, coraje, dignidad, compasión y generosidad, recuerda su familia.  
+
+<br><br>
+Una noche de 2002, en la víspera de su cumpleaños número 59, las hijas de la Dra. Daw recibieron la noticia de que su madre estaba gravemente enferma. Tenía múltiples aneurismas cerebrales.  La hemorragia había causado un daño tan grande que ya no respondía a ninguna de las pruebas. 
+<br><br>
+"Parecía que todo se desmoronaba", recuerdan las hijas de la Dra. Daw. "Entonces un promotor de OneLegacy nos habló sobre la donación de órganos. La idea de tener la oportunidad de salvar la vida de otra persona nos conmovió aun cuando no deseábamos retirarle a mi madre el soporte vital". 
+<br><br>
+"Nos preguntamos qué hubiese deseado ella. Por lo que <br>aceptamos donar algunos de sus órganos. Queríamos que <br>el padre, el marido, la esposa, la madre, la hija o el hijo <br>de alguien tuviera más tiempo para compartir con sus seres queridos". 
+<br><br>
+La familia de la doctora se despidió de ella. "Fue muy doloroso dejarla partir", recuerdan. "Pero alguien tendría la posibilidad de vivir gracias a mamá. Como médica, se había preocupado por muchas personas. <br>El último regalo que hizo fue testimonio eterno de su carácter".</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="pie">
+                    <h4>Acerca de nosotros</h4>
+                    <p>Somos una organización sin fines de lucro dedicada a la donación de órganos.</p>
+                </div>
+                <div class="pie">
+                    <h4>Enlaces útiles</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="acerca.html">Quienes somos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="pie">
+                    <h4>Redes sociales</h4>
+                    <ul>
+                        <li><img src="https://cdn-icons-png.flaticon.com/512/733/733603.png" style="width: 20px; height: 20px;"><a href="#" target="_blank"> Facebook</a></li>
+                        <li><img src="https://cdn-icons-png.flaticon.com/512/25/25347.png" style="width: 20px; height: 20px;"><a href="#" target="_blank"> Twitter</a></li>
+                        <li><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" style="width: 20px; height: 20px;"><a href="#" target="_blank"> Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>&copy; 2023 Organización sin fines de lucro. Todos los derechos reservados.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

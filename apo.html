@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donación de Órganos</title>
+    <link rel="stylesheet" type="text/css" href="css/styles1.css">
+    <style>
+      .navbar-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-logo img {
+      height: 30px; /* Ajusta el tamaño del logo según necesites */
+      margin-right: 10px;
+    }
+
+            section{
+    display: flex;
+    width: 1340px;
+    height: 500px;
+
+}
+section img{
+width: 0px;
+flex-grow: 10;
+object-fit: cover;
+opacity: .8;
+transition: .5s ease;
+}
+
+section img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+    
+}
+
+
+
+    @keyframes diamond-in-hesitate {
+  0% {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  50% {
+    clip-path: polygon(45% 50%, 50% 25%, 55% 50%, 50% 75%);
+  }
+  100% {
+    clip-path: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);
+  }
+}
+
+[transition-style="in:diamond:hesitate"] {
+  animation: 1.5s cubic-bezier(.25, 1, .30, 1) diamond-in-hesitate both;
+
+
+}
+
+/* Estilos para la sección de imágenes y paneles */
+        .image-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        
+
+        }
+
+        .image-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 8px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            transform: translateY(100%);
+        }
+
+        .image-container:hover .info {
+            transform: translateY(0);
+        }
+
+.navbar {
+    background-color: #425413;
+            padding: 10px;
+            position: fixed; /* Fija la barra de navegación en la parte superior */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Asegura que la barra de navegación esté por encima de otros elementos */
+            box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-right: 20px;
+    position: relative;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: block;
+}
+
+.nav-item a:hover {
+    background-color: #4e6311;
+    border-radius: 4px;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 25px 0 0 25px;
+    width: 200px;
+}
+
+.search-button {
+    border: none;
+    background-color: #74940a;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    margin: 10px;
+    width: 200px;
+    height: 150px;
+}
+
+
+
+.comentarios {
+    background-color: #a34532;
+   padding: 10px;
+     display: inline-block; /*  el borde se ajuste al tamaño del contenido */
+     margin: 0 auto;
+  }
+
+
+ .container {
+        display: flex;
+        justify-content: flex-end;
+              gap: 150px; /* Espacio entre los elementos */
+
+    }
+
+    .informa {
+        background-image: linear-gradient(to left, #c3553f, #fcf5f4);
+        padding: 10px;
+
+
+    }
+
+footer {
+  background-color: #3d1912;
+  padding: 20px;
+  color: #fcf5f4;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer .pie {
+  flex-basis: 33.33%;
+  margin: 20px;
+}
+
+
+
+footer ul {
+  list-style: none;
+
+}
+
+footer li {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #e59484;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #f0bcb1;
+}
+
+footer .copyright {
+  font-size: 14px;
+  color: #d3614a;
+  text-align: center;
+}
+       
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <div class="navbar-logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/5783/5783338.png" alt="Logo">
+            </div>
+            <li class="nav-item"><a href="pagprim.html">Inicio</a></li>
+            <li class="nav-item"><a href="pag.html">Acerca de</a></li>
+            
+            <li class="nav-item dropdown">
+                <a href="#" class="dropbtn">Más</a>
+                <div class="dropdown-content">
+                    <a href="#">Acerca de</a>
+                    <a href="#">Casos</a>
+                    <a href="#">Órganos</a>
+                </div>
+            </li>
+            <li class="nav-item search-item">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="search-button">Buscar</button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Encabezado -->
+    <div class="header">
+        <marquee><h1>---------> Donación de Órganos <---------</h1></marquee>
+    </div>
+
+    <!-- Sección de imágenes principales -->
+    <section>
+        <img src="https://www.gaceta.unam.mx/wp-content/uploads/2019/10/191014-com4-des-f1-donacion-organis.jpg" title="Desayuno">
+        <img src="https://miguelkhourycom.files.wordpress.com/2022/09/mac-1-26-de-septiembre.jpg" title="Carne">
+        <img src="https://img.freepik.com/vector-premium/ilustracion-plana-dia-mundial-donacion-organos-manos-sosteniendo-corazon_23-2149481675.jpg" title="Ensalada">
+        <img src="https://img.freepik.com/vector-gratis/ilustracion-plana-dia-mundial-donacion-organos-manos-que-muestran-corazon_23-2149478062.jpg" title="Postres">
+    </section>
+
+    <hr style="color: red">
+
+    <!-- Sección de imágenes con texto -->
+    <div class="image-section">
+        <div class="image-container">
+            <img src="https://img.freepik.com/vector-premium/fondo-dia-donacion-organos-concepto-corazon_23-2149481676.jpg">
+            <div class="info">Mi Primera Imagen</div>
+        </div>
+        <div class="image-container">
+            <img src="https://i0.wp.com/concienciapublica.com.mx/wp-content/uploads/2021/09/0_Donacion-de-organos.jpg?fit=696%2C464&ssl=1">
+            <div class="info">Mi Segunda Imagen</div>
+        </div>
+        <div class="image-container">
+            <img src="https://img.freepik.com/vector-premium/fondo-dia-donacion-organos-concepto-telefono_23-2149481674.jpg">
+            <div class="info">Mi Tercera Imagen</div>
+        </div>
+        <div class="image-container">
+            <img src="https://img.freepik.com/vector-premium/dia-mundial-donacion-organos-concepto-corazon_23-2149481673.jpg">
+            <div class="info">Mi Cuarta Imagen</div>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <h2>Pregunats frecuentes sobre la donacion de organos</h2>
+        <p>La donación de órganos es el acto voluntario de dar uno o más órganos o tejidos de tu cuerpo para ser trasplantados a otra persona que los necesita debido a enfermedad o lesión </p>
+        <ul>
+            <li>¿Qué órganos y tejidos se pueden donar?</li>
+            <p>Se pueden donar órganos como el corazón, los pulmones, los riñones, el hígado, el páncreas e intestinos. También se pueden donar tejidos como la córnea, la piel, los huesos, los tendones y las válvulas cardíacas.</p>
+            <li>¿Quién puede ser donante de órganos?</li>
+            <p>Cualquier persona puede ser donante de órganos, independientemente de la edad, raza, género u orientación sexual. Lo importante es que en el momento del fallecimiento, se mantengan en buenas condiciones los órganos y tejidos para la donación.</p>
+            <li>¿Cómo puedo registrarme como donante de órganos?</li>
+            <p>En muchos países, puedes registrarte como donante de órganos al obtener una tarjeta de donante o al registrar tu decisión en un registro nacional de donantes. También puedes comunicar tu decisión a tu familia y sería bueno incluirlo en tu testamento vital o documento similar.</p>
+            <li>¿Cuál es el proceso de donación de órganos?</li>
+            <p>El proceso varía según la situación y las leyes de cada país, pero generalmente involucra la evaluación médica del potencial donante, la coordinación entre los equipos médicos, la extracción de los órganos y tejidos y su trasplante a los receptores.</p>
+            <li>¿Hay alguna restricción para ser donante de órganos?</li>
+            <p>Algunas condiciones médicas pueden afectar la idoneidad de un individuo como donante, pero en general, la mayoría de las personas pueden ser donantes. Las enfermedades graves como el cáncer en etapa avanzada o infecciones graves pueden ser contraindicaciones.</p>
+            <li>¿Es seguro donar órganos?</li>
+            <p>Sí, la donación de órganos es un procedimiento seguro y los equipos médicos están capacitados para realizarlo de manera segura y ética. Se toman precauciones para garantizar que tanto el donante como el receptor estén protegidos de cualquier riesgo de transmisión de enfermedades.</p>
+            <li>¿Qué sucede después de la donación?</li>
+            <p>Después de la donación, los órganos y tejidos son trasplantados a los receptores que los necesitan. Los receptores son seleccionados según criterios médicos como la compatibilidad, la urgencia y el tiempo en lista de espera.</p>
+            <li>¿Puedo donar órganos en vida?</li>
+            <p>Sí, es posible donar algunos órganos en vida, como un riñón o una parte del hígado, a un familiar o amigo que lo necesite. Este tipo de donación se llama donación en vida y generalmente se realiza en casos específicos de necesidad médica.</p>
+            <li>¿Qué debo hacer si quiero ser donante de órganos?</li>
+            <p>Si deseas ser donante de órganos, debes informar a tus seres queridos sobre tu decisión, registrar tu voluntad como donante en un registro nacional si está disponible en tu país y llevar una tarjeta de donante si es posible. También es importante discutir tu decisión con tu médico y familia para asegurarte de que se respete tu deseo en caso de fallecimiento.</p>
+
+    </div>
+
+    <!-- Formulario de comentarios -->
+    <div class="comentarios">
+        <h3>Comentarios</h3>
+        <form action="#" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="comentario">Comentario:</label>
+            <textarea id="comentario" name="comentario" rows="4" required></textarea>
+
+            <label for="donar">¿Estás interesado en ser donante?</label>
+            <input type="radio" id="si" name="donar" value="si">
+            <label for="si">Sí</label>
+            <input type="radio" id="no" name="donar" value="no">
+            <label for="no">No</label>
+
+            <label for="contacto">¿Te gustaría ser contactado?</label>
+            <input type="checkbox" id="contacto" name="contacto" value="si">
+            <label for="contacto">Sí</label>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="pie">
+                    <h4>Sobre Nosotros</h4>
+                    <p>Somos una organización dedicada a fomentar la donación de órganos y salvar vidas.</p>
+                </div>
+                <div class="pie">
+                    <h4>Enlaces Útiles</h4>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Servicios</a></li>
+                    </ul>
+                </div>
+                <div class="pie">
+                    <h4>Contáctanos</h4>
+                    <p>Email: info@donacionorganos.com</p>
+                    <p>Teléfono: +1 234 567 890</p>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2024 Donación de Órganos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

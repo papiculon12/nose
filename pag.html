@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donación de Órganos</title>
+    <link rel="stylesheet" type="text/css" href="css/styles1.css">
+    <style>
+        /* Estilos para la barra de navegación */
+        .navbar {
+            background-color: #425413;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        .nav-list {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-item {
+            margin-right: 20px;
+            position: relative;
+        }
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            display: block;
+        }
+        .nav-item a:hover {
+            background-color: #4e6311;
+            border-radius: 4px;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .search-item {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        .search-input {
+            border: none;
+            outline: none;
+            padding: 8px;
+            border-radius: 25px 0 0 25px;
+            width: 200px;
+        }
+        .search-button {
+            border: none;
+            background-color: #74940a;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+        /* Estilos para la sección de imágenes */
+        section {
+            display: flex;
+            width: 100%;
+            height: 500px;
+        }
+        section img {
+            width: 0;
+            flex-grow: 10;
+            object-fit: cover;
+            opacity: .8;
+            transition: .5s ease;
+        }
+        section img:hover {
+            cursor: crosshair;
+            width: 300px;
+            opacity: 1;
+            filter: contrast(120%);
+        }
+
+        /* Estilos para las imágenes y paneles */
+        .image-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        }
+        .image-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+        .info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 8px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            transform: translateY(100%);
+        }
+        .image-container:hover .info {
+            transform: translateY(0);
+        }
+
+        /* Estilos para la sección de información */
+        .informa {
+            background-image: linear-gradient(to left, #c3553f, #fcf5f4);
+            padding: 10px;
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            background-color: #3d1912;
+            padding: 20px;
+            color: #fcf5f4;
+        }
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        footer .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        footer .pie {
+            flex-basis: 33.33%;
+            margin: 20px;
+        }
+        footer ul {
+            list-style: none;
+        }
+        footer li {
+            margin-bottom: 10px;
+        }
+        footer a {
+            color: #e59484;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #f0bcb1;
+        }
+        footer .copyright {
+            font-size: 14px;
+            color: #d3614a;
+            text-align: center;
+        }
+
+        /* Estilos para el formulario de comentarios */
+        .comentarios {
+            background-color: #a34532;
+            padding: 10px;
+            display: inline-block;
+            margin: 0 auto;
+        }
+        .container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 150px;
+        }
+    </style>
+</head>
+<body style="margin: 0;">
+    <nav class="navbar">
+        <ul class="nav-list">
+            <div class="navbar-logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/5783/5783338.png" alt="Logo">
+            </div>
+            <li class="nav-item"><a href="pagprim.html">Inicio</a></li>
+            <li class="nav-item"><a href="#">Acerca de</a></li>
+            <li class="nav-item"><a href="#">Servicios</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropbtn">Más</a>
+                <div class="dropdown-content">
+                    <a href="#">Acerca de</a>
+                    <a href="#">Casos</a>
+                    <a href="#">Órganos</a>
+                </div>
+            </li>
+            <li class="nav-item search-item">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="search-button">Buscar</button>
+            </li>
+        </ul>
+    </nav>
+
+    <div style="background-color: #ba4848; color: white; font-family: cursive;">
+        <marquee><h1>Donación de Órganos</h1></marquee>
+    </div>
+
+    <section>
+        <img src="https://www.gaceta.unam.mx/wp-content/uploads/2019/10/191014-com4-des-f1-donacion-organis.jpg" title="Desayuno">
+        <img src="https://miguelkhourycom.files.wordpress.com/2022/09/mac-1-26-de-septiembre.jpg" title="Carne">
+        <img src="https://img.freepik.com/vector-premium/ilustracion-plana-dia-mundial-donacion-organos-manos-sosteniendo-corazon_23-2149481675.jpg" title="Ensalada">
+        <img src="https://img.freepik.com/vector-gratis/ilustracion-plana-dia-mundial-donacion-organos-manos-que-muestran-corazon_23-2149478062.jpg" title="Postres">
+    </section>
+
+    <hr style="border: 8px solid #9c3939;">
+
+    <section class="image-section">
+        <div class="image-container" transition-style="in:diamond:hesitate">
+            <a href="desayuno_1.html" target="self">
+                <img src="https://img.freepik.com/vector-premium/donacion-organos-manos-sostienen-pulmones-corazon-higado-donante-trasplante-ayuda-voluntaria-paciente_284092-1082.jpg" alt="Acerca de">
+            </a>
+            <div class="info">Acerca de la información de órganos tenemos limitada información "acerca de"</div>
+        </div>
+
+        <div class="image-container" transition-style="in:diamond:hesitate">
+            <a href="desayuno_1.html" target="self">
+                <img src="https://cdn-icons-png.flaticon.com/512/5558/5558934.png" alt="Casos">
+            </a>
+            <div class="info">En esta página se recaban casos de experiencias de la gente</div>
+        </div>
+
+        <div class="image-container" transition-style="in:diamond:hesitate">
+            <a href="desayuno_1.html" target="self">
+                <img src="https://cdn-icons-png.flaticon.com/512/5792/5792642.png" alt="Más">
+            </a>
+            <div class="info">Es de suma importancia la donación de órganos para salvar más vidas</div>
+        </div> </section>
+<div class="informacion">
+    <h2>Donación de Órganos</h2>
+    <p>La donación de órganos es un acto altruista mediante el cual una persona, llamada donante, proporciona sus órganos o tejidos después de su fallecimiento para ser trasplantados a otras personas que los necesitan, llamadas receptores. Este acto puede salvar y mejorar significativamente la vida de los receptores.</p>
+
+    <h3>¿Cómo se lleva a cabo la donación de órganos?</h3>
+    <p>La donación de órganos puede ocurrir en dos situaciones principales: después de la muerte encefálica o de un donante vivo.</p>
+    <ul>
+        <li><strong>Después de la muerte encefálica:</strong> Cuando una persona sufre una lesión cerebral grave y se encuentra en estado de muerte encefálica, se puede considerar la donación de órganos. En este caso, se realizan pruebas médicas rigurosas para confirmar la muerte encefálica antes de proceder con la donación de órganos.</li>
+        <li><strong>De un donante vivo:</strong> Algunas personas pueden donar un órgano mientras están vivas, como un riñón o una porción del hígado. Esto suele ocurrir cuando hay un familiar o un amigo cercano que necesita un trasplante y el donante es compatible y está dispuesto a donar.</li>
+    </ul>
+
+    <h3>Beneficios de la donación de órganos</h3>
+    <ul>
+        <li><strong>Salva vidas:</strong> Un solo donante puede salvar hasta ocho vidas al donar órganos como el corazón, los pulmones, el hígado, los riñones, el páncreas e intestinos.</li>
+        <li><strong>Mejora la calidad de vida:</strong> Los receptores de trasplantes pueden llevar una vida más saludable y activa después del procedimiento.</li>
+        <li><strong>Ayuda a la ciencia:</strong> La investigación médica basada en la donación de órganos contribuye al avance de la medicina y el tratamiento de enfermedades.</li>
+    </ul>
+
+    <h3>¿Cómo convertirse en donante?</h3>
+    <p>Para convertirse en donante de órganos, es importante expresar tu voluntad de donar. Puedes registrarte como donante de órganos en el sistema nacional de donación de tu país y asegurarte de informar a tus seres queridos sobre tu decisión. Además, es fundamental mantener actualizada tu voluntad de donar en caso de cambios en tu situación médica o personal.</p>
+</div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="pie">
+                    <h3>Sobre Nosotros</h3>
+                    <p>Nosotros somos una organización sin fines de lucro dedicada a promover la donación de órganos.</p>
+                </div>
+                <div class="pie">
+                    <h3>Enlaces Útiles</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="pie">
+                    <h3>Contacto</h3>
+                    <p>Correo: info@donaciondeorganos.org</p>
+                    <p>Teléfono: +34 123 456 789</p>
+                    <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="comentarios">
+                <h3>Deja un Comentario</h3>
+                <form action="#">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <br><br>
+                    <label for="email">Correo:</label>
+                    <input type="email" id="email" name="email">
+                    <br><br>
+                    <label for="comentario">Comentario:</label>
+                    <textarea id="comentario" name="comentario"></textarea>
+                    <br><br>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
